@@ -1,17 +1,13 @@
-declare {
-  schema: "raw",
+DECLARE
+  { SCHEMA: "raw",
   name: "clientes_ext",
-  description: "Clientes desde GCS (externa)"
-}
-
-declare {
-  schema: "raw",
+  description: "Clientes desde GCS (externa)" }
+DECLARE
+  { SCHEMA: "raw",
   name: "productos_ext",
-  description: "Productos desde GCS (externa)"
-}
-
-declare {
-  schema: "raw",
+  description: "Productos desde GCS (externa)" }
+DECLARE
+  { SCHEMA: "raw",
   name: "ventas_ext",
   description: "Ventas desde GCS (externa)"
-}
+  -- Declarativo, y para ${ref()}
