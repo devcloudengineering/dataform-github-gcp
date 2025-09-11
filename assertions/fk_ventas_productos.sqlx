@@ -1,0 +1,16 @@
+config {
+    type: "assertion",
+    tags: ["assert_crit"],
+    dependencies: ["fct_ventas", "dim_productos"]
+}
+
+SELECT
+  v.*
+FROM
+  ${ref("fct_ventas")} v
+LEFT JOIN
+  ${ref("dim_productos")} p
+USING
+  (id_producto)
+WHERE
+  p.id_producto IS NULL;

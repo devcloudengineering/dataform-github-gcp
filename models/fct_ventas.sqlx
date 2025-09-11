@@ -1,0 +1,33 @@
+config {
+    type: "incremental",
+    schema: "mart",
+    uniqueKey: "id_venta",
+    tags: ["fact", "gold"],
+    dependencies: ["stg_ventas", "stg_clientes", "dim_productos"]
+}
+
+SELECT
+  v.id_venta,
+  v.fecha_venta,
+  v.id_producto,
+  v.id_cliente,
+  v.cantidad,
+  v.precio_unitario,
+  v.monto,
+  c.region,
+  c.segmento,
+  p.categoria
+FROM
+  ${ref("stg_ventas")} v
+LEFT JOIN
+  ${ref("stg_clientes")} c
+USING
+  (id_cliente)
+LEFT JOIN
+  ${ref("dim_productos")} p
+USING
+  (id_producto) {%
+IF
+  incremental() %}
+WHERE
+  v.fecha_venta = ${proc_date()} {% endif %}

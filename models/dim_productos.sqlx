@@ -1,0 +1,14 @@
+config {
+    type: "table",
+    schema: "mart",
+    tags: ["dim", "gold"],
+    dependencies: ["stg_productos"]
+}
+
+SELECT
+  id_producto,
+  nombre_producto,
+  categoria,
+  precio_lista
+FROM
+  ${ref("stg_productos")};

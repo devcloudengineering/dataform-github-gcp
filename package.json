@@ -1,0 +1,9 @@
+{
+  "name": "workspace-hites",
+  "version": "1.0.0",
+  "description": "Proyecto Dataform de pruebas ETL (clientes, productos, ventas)",
+  "scripts": {},
+  "dependencies": {
+    "@dataform/core": "^3.0.0"
+  }
+}

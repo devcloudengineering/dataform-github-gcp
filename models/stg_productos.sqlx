@@ -1,0 +1,14 @@
+config {
+    type: "table",
+    schema: "stg",
+    tags: ["staging"],
+    dependencies: ["raw.productos_ext"]
+}
+
+SELECT
+  CAST(id_producto AS string) AS id_producto,
+  UPPER(TRIM(nombre_producto)) AS nombre_producto,
+  UPPER(TRIM(categoria)) AS categoria,
+  CAST(precio_lista AS numeric) AS precio_lista
+FROM
+  ${ref("raw", "productos_ext")};

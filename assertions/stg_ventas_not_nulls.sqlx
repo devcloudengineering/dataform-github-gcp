@@ -1,0 +1,15 @@
+config {
+    type: "assertion",
+    tags: ["assert_crit"],
+    dependencies: ["stg_ventas"]
+}
+
+SELECT
+  *
+FROM
+  ${ref("stg_ventas")}
+WHERE
+  id_venta IS NULL
+  OR fecha_venta IS NULL
+  OR id_producto IS NULL
+  OR id_cliente IS NULL;

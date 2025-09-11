@@ -1,0 +1,17 @@
+js {
+    const bucket = dataform.projectConfig.vars.bucket;
+    const uris = [`gs://${bucket}/productos_hites.csv`];
+}
+
+config {
+    type: "operations",
+    tags: ["external", "raw"]
+}
+
+CREATE OR REPLACE EXTERNAL TABLE
+  `raw.productos_ext` OPTIONS ( format = 'CSV',
+    uris = ${JSON.stringify(uris)},
+    field_delimiter = ',',
+    skip_leading_rows = 1,
+    allow_quoted_newlines = TRUE,
+    autodetect = TRUE )

@@ -1,0 +1,12 @@
+{
+    "warehouse": "bigquery",
+    "defaultLocation": "southamerica-east1",
+    "defaultSchema": "stg",
+    "assertionSchema": "stg_assert",
+    "defaultDatabase": "mi-primer-proyecto-469023",
+    "vars": {
+        "env": "prd",
+        "proc_date": "2025-09-10",
+        "bucket": "data_in_hites"
+    }
+}
