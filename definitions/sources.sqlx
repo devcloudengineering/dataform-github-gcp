@@ -1,12 +1,12 @@
 DECLARE
   { SCHEMA: "raw",
   name: "clientes_ext",
-  "description": "Clientes desde GCS (externa)"}
+  description: "Clientes desde GCS (externa)" }
 DECLARE
   { SCHEMA: "raw",
   name: "productos_ext",
-  "description": "Productos desde GCS (externa)"}
+  description: "Productos desde GCS (externa)" }
 DECLARE
   { SCHEMA: "raw",
   name: "ventas_ext",
-  "description": "Ventas desde GCS (externa)"}
+  description: "Ventas desde GCS (externa)" }

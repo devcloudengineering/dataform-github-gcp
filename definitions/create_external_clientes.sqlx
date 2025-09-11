@@ -13,5 +13,4 @@ CREATE OR REPLACE EXTERNAL TABLE
     uris = ${JSON.stringify(uris)},
     field_delimiter = ',',
     skip_leading_rows = 1,
-    allow_quoted_newlines = TRUE,
-    autodetect = TRUE )
+    allow_quoted_newlines = TRUE)
