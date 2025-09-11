@@ -11,4 +11,4 @@ SELECT
   categoria,
   precio_lista
 FROM
-  ${ref("stg_productos")};
+  ${ref("stg_productos")}

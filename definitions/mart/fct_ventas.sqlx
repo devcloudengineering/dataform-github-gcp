@@ -1,7 +1,9 @@
+js { const { procDate } = require("includes/helpers"); }
+
 config {
     type: "incremental",
     schema: "mart",
-    uniqueKey: "id_venta",
+    uniqueKey: ["id_venta"],
     tags: ["fact", "gold"],
     dependencies: ["stg_ventas", "stg_clientes", "dim_productos"]
 }
@@ -30,4 +32,4 @@ USING
 IF
   incremental() %}
 WHERE
-  v.fecha_venta = ${proc_date()} {% endif %}
+  v.fecha_venta = ${procDate()} {% endif %}

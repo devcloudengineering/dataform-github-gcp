@@ -1,2 +1,0 @@
-CREATE OR REPLACE FUNCTION
-  proc_date() AS (CAST($vars.proc_date AS date));

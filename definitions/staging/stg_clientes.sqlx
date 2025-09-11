@@ -1,0 +1,12 @@
+config {
+  type: "table",
+  schema: "stg",
+  tags: ["staging"]
+}
+
+SELECT
+  CAST(id_cliente AS STRING) AS id_cliente,
+  UPPER(TRIM(nombre))        AS nombre,
+  UPPER(TRIM(region))        AS region,
+  UPPER(TRIM(segmento))      AS segmento
+FROM ${ref("raw","clientes_ext")}
