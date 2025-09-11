@@ -1,11 +1,14 @@
-js { const { procDate } = require("includes/helpers"); }
-
 config {
     type: "incremental",
     schema: "mart",
-    uniqueKey: ["id_venta"],
     tags: ["fact", "gold"],
-    dependencies: ["stg_ventas", "stg_clientes", "dim_productos"]
+    uniqueKey: ["id_venta"]
+}
+
+js {
+    const {
+        procDate
+    } = require("includes/helpers");
 }
 
 SELECT
