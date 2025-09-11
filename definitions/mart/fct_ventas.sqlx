@@ -31,8 +31,7 @@ USING
 LEFT JOIN
   ${ref("dim_productos")} p
 USING
-  (id_producto) {%
-IF
-  incremental() %}
-WHERE
-  v.fecha_venta = ${procDate()} {% endif %}
+  (id_producto)
+{% if incremental() %}
+WHERE v.fecha_venta = ${procDate()}
+{% endif %}
