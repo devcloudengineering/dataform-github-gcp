@@ -2,7 +2,8 @@ config {
     type: "incremental",
     schema: "mart",
     tags: ["fact", "gold"],
-    uniqueKey: ["id_venta"]
+    uniqueKey: ["id_venta"],
+    dependencies: ["stg_ventas", "stg_clientes", "dim_productos"]
 }
 
 js {
@@ -20,7 +21,6 @@ SELECT
   v.precio_unitario,
   v.monto,
   c.region,
-  c.segmento,
   p.categoria
 FROM
   ${ref("stg_ventas")} v
@@ -32,6 +32,4 @@ LEFT JOIN
   ${ref("dim_productos")} p
 USING
   (id_producto)
-{% if incremental() %}
-WHERE v.fecha_venta = ${procDate()}
-{% endif %}
+${ when(incremental(), `WHERE v.fecha_venta = ${procDate()}`) }
