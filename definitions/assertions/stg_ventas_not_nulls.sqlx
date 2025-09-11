@@ -12,4 +12,4 @@ WHERE
   id_venta IS NULL
   OR fecha_venta IS NULL
   OR id_producto IS NULL
-  OR id_cliente IS NULL;
+  OR id_cliente IS NULL

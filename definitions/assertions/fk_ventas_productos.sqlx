@@ -13,4 +13,4 @@ LEFT JOIN
 USING
   (id_producto)
 WHERE
-  p.id_producto IS NULL;
+  p.id_producto IS NULL

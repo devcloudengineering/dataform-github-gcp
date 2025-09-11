@@ -1,14 +1,12 @@
 config {
-    type: "table",
-    schema: "stg",
-    tags: ["staging"],
-    dependencies: ["raw.productos_ext"]
+  type: "table",
+  schema: "stg",
+  tags: ["staging"]
 }
 
 SELECT
-  CAST(id_producto AS string) AS id_producto,
-  UPPER(TRIM(nombre_producto)) AS nombre_producto,
-  UPPER(TRIM(categoria)) AS categoria,
-  CAST(precio_lista AS numeric) AS precio_lista
-FROM
-  ${ref("raw", "productos_ext")};
+  CAST(producto_id AS STRING)    AS id_producto,
+  UPPER(TRIM(nombre_producto))   AS nombre_producto,
+  UPPER(TRIM(categoria))         AS categoria,
+  CAST(precio_lista AS NUMERIC)  AS precio_lista
+FROM `mi-primer-proyecto-469023.raw.productos_ext`

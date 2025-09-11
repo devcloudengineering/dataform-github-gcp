@@ -5,8 +5,7 @@ config {
 }
 
 SELECT
-  CAST(id_cliente AS STRING) AS id_cliente,
+  CAST(cliente_id AS STRING) AS id_cliente,
   UPPER(TRIM(nombre))        AS nombre,
-  UPPER(TRIM(region))        AS region,
-  UPPER(TRIM(segmento))      AS segmento
-FROM ${ref("raw","clientes_ext")}
+  UPPER(TRIM(region))        AS region
+FROM `mi-primer-proyecto-469023.raw.clientes_ext`

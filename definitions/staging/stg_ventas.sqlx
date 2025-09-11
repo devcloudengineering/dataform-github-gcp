@@ -1,21 +1,26 @@
+js {
+    const {
+        procDate
+    } = require("includes/helpers");
+}
+
 config {
     type: "table",
     schema: "stg",
-    tags: ["staging"],
-    dependencies: ["raw.ventas_ext"]
+    tags: ["staging"]
 }
 
 SELECT
-  CAST(id_venta AS int64) AS id_venta,
+  CAST(venta_id AS int64) AS id_venta,
   CAST(fecha_venta AS date) AS fecha_venta,
-  CAST(id_producto AS string) AS id_producto,
-  CAST(id_cliente AS string) AS id_cliente,
+  CAST(producto_id AS string) AS id_producto,
+  CAST(cliente_id AS string) AS id_cliente,
   CAST(cantidad AS int64) AS cantidad,
   CAST(precio_unitario AS numeric) AS precio_unitario,
   cantidad * precio_unitario AS monto
 FROM
-  ${ref("raw", "ventas_ext")}
+  `mi-primer-proyecto-469023.raw.ventas_ext`
 WHERE
-  fecha_venta = ${proc_date()}
+  DATE(fecha_venta) = ${procDate()}
   AND cantidad > 0
-  AND precio_unitario >= 0;
+  AND precio_unitario >= 0
