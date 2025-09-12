@@ -6,7 +6,7 @@ config {
 }
 
 SELECT
-  id_producto,
+  producto_id,
   nombre_producto,
   categoria,
   precio_lista

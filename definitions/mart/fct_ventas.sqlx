@@ -13,10 +13,10 @@ js {
 }
 
 SELECT
-  v.id_venta,
+  v.venta_id,
   v.fecha_venta,
-  v.id_producto,
-  v.id_cliente,
+  v.producto_id,
+  v.cliente_id,
   v.cantidad,
   v.precio_unitario,
   v.monto,
