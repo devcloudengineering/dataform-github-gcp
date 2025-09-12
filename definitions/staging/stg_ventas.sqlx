@@ -11,16 +11,16 @@ config {
 }
 
 SELECT
-  CAST(venta_id AS int64) AS id_venta,
+  CAST(venta_id AS int64) AS venta_id,
   CAST(fecha_venta AS date) AS fecha_venta,
-  CAST(producto_id AS string) AS id_producto,
-  CAST(cliente_id AS string) AS id_cliente,
+  CAST(producto_id AS string) AS producto_id,
+  CAST(cliente_id AS string) AS cliente_id,
   CAST(cantidad AS int64) AS cantidad,
   CAST(precio_unitario AS numeric) AS precio_unitario,
   cantidad * precio_unitario AS monto
 FROM
   ${ref("raw", "ventas_ext")}
 WHERE
-  DATE(fecha_venta) = ${procDate()}
+  DATE(fecha_venta) >= ${procDate()}
   AND cantidad > 0
   AND precio_unitario >= 0

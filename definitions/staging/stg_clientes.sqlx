@@ -5,7 +5,7 @@ config {
 }
 
 SELECT
-  CAST(cliente_id AS STRING) AS id_cliente,
+  CAST(cliente_id AS STRING) AS cliente_id,
   UPPER(TRIM(nombre))        AS nombre,
   UPPER(TRIM(region))        AS region
 FROM ${ref("raw", "clientes_ext")}

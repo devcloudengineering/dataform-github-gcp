@@ -5,7 +5,7 @@ config {
 }
 
 SELECT
-  CAST(producto_id AS STRING)    AS id_producto,
+  CAST(producto_id AS STRING)    AS producto_id,
   UPPER(TRIM(nombre_producto))   AS nombre_producto,
   UPPER(TRIM(categoria))         AS categoria,
   CAST(precio_lista AS NUMERIC)  AS precio_lista
