@@ -1,6 +1,6 @@
 js {
     const {
-        procDate
+        dateProcess
     } = require("includes/helpers");
 }
 
@@ -21,6 +21,6 @@ SELECT
 FROM
   ${ref("raw", "ventas_ext")}
 WHERE
-  DATE(fecha_venta) >= ${procDate()}
+  DATE(fecha_venta) >= ${dateProcess()}
   AND cantidad > 0
   AND precio_unitario >= 0

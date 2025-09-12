@@ -8,7 +8,7 @@ config {
 
 js {
     const {
-        procDate
+        dateProcess
     } = require("includes/helpers");
 }
 
@@ -32,4 +32,4 @@ LEFT JOIN
   ${ref("dim_productos")} p
 USING
   (producto_id)
-${ when(incremental(), `WHERE v.fecha_venta = ${procDate()}`) }
+${ when(incremental(), `WHERE v.fecha_venta = ${dateProcess()}`) }

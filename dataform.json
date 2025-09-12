@@ -6,7 +6,7 @@
     "defaultDatabase": "mi-primer-proyecto-469023",
     "vars": {
         "env": "prd",
-        "proc_date": "2024-08-06",
+        "fecha_proceso": "2024-08-06",
         "bucket": "data_in_hites"
     }
 }
