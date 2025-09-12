@@ -27,9 +27,9 @@ FROM
 LEFT JOIN
   ${ref("stg_clientes")} c
 USING
-  (id_cliente)
+  (cliente_id)
 LEFT JOIN
   ${ref("dim_productos")} p
 USING
-  (id_producto)
+  (producto_id)
 ${ when(incremental(), `WHERE v.fecha_venta = ${procDate()}`) }
