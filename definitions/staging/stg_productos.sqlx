@@ -9,4 +9,4 @@ SELECT
   UPPER(TRIM(nombre_producto))   AS nombre_producto,
   UPPER(TRIM(categoria))         AS categoria,
   CAST(precio_lista AS NUMERIC)  AS precio_lista
-FROM `mi-primer-proyecto-469023.raw.productos_ext`
+FROM ${ref("raw", "productos_ext")}

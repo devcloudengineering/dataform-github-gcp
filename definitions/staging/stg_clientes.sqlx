@@ -8,4 +8,4 @@ SELECT
   CAST(cliente_id AS STRING) AS id_cliente,
   UPPER(TRIM(nombre))        AS nombre,
   UPPER(TRIM(region))        AS region
-FROM `mi-primer-proyecto-469023.raw.clientes_ext`
+FROM ${ref("raw", "clientes_ext")}

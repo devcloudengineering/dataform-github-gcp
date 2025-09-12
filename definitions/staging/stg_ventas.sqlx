@@ -19,7 +19,7 @@ SELECT
   CAST(precio_unitario AS numeric) AS precio_unitario,
   cantidad * precio_unitario AS monto
 FROM
-  `mi-primer-proyecto-469023.raw.ventas_ext`
+  ${ref("raw", "ventas_ext")}
 WHERE
   DATE(fecha_venta) = ${procDate()}
   AND cantidad > 0
