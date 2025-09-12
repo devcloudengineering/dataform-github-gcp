@@ -2,7 +2,7 @@ config {
     type: "incremental",
     schema: "mart",
     tags: ["fact", "gold"],
-    uniqueKey: ["id_venta"],
+    uniqueKey: ["venta_id"],
     dependencies: ["stg_ventas", "stg_clientes", "dim_productos"]
 }
 
