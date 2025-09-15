@@ -9,7 +9,7 @@ SELECT
 FROM
   ${ref("stg_ventas")}
 WHERE
-  id_venta IS NULL
+  venta_id IS NULL
   OR fecha_venta IS NULL
-  OR id_producto IS NULL
-  OR id_cliente IS NULL
+  OR producto_id IS NULL
+  OR cliente_id IS NULL

@@ -11,6 +11,6 @@ FROM
 LEFT JOIN
   ${ref("dim_productos")} p
 USING
-  (id_producto)
+  (producto_id)
 WHERE
-  p.id_producto IS NULL
+  p.producto_id IS NULL
