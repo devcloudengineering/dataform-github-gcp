@@ -10,9 +10,9 @@ from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobO
 
 PROJECT_ID = "mi-primer-proyecto-469023"
 PROJECT_NUMBER = "790111290761"
-REGION = "southamerica-east1"
-REPOSITORY_ID = "hites-repository"
-WORKSPACE_ID = "workspace-hites"
+REGION = "southamerica-west1"
+REPOSITORY_ID = "dataform-repository"
+WORKSPACE_ID = "repository-etl"
 
 INCLUDED_TAGS = ["external", "raw", "staging", "dim", "fact", "gold", "assert_crit"]
 
