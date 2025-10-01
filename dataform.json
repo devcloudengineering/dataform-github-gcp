@@ -3,7 +3,7 @@
     "defaultLocation": "southamerica-west1",
     "defaultSchema": "stg",
     "assertionSchema": "stg_assert",
-    "defaultDatabase": "mi-primer-proyecto-469023",
+    "defaultDatabase": "eng-archery-473819-h2",
     "vars": {
         "env": "prd",
         "fecha_proceso": "2024-08-06",
