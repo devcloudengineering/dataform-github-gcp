@@ -8,8 +8,8 @@ from airflow.providers.google.cloud.operators.dataform import (
 )
 from airflow.providers.google.cloud.operators.bigquery import BigQueryInsertJobOperator
 
-PROJECT_ID = "mi-primer-proyecto-469023"
-PROJECT_NUMBER = "790111290761"
+PROJECT_ID = "eng-archery-473819-h2"
+PROJECT_NUMBER = "1515952121"
 REGION = "southamerica-west1"
 REPOSITORY_ID = "dataform-repository"
 WORKSPACE_ID = "repository-etl"
